@@ -1,0 +1,321 @@
+
+TESTING BACHECA1 METHODS:
+
+1) Try to create a board with null password:
+     IllegalArgumentException thrown: Null password not accepted!
+2) Try to create a board with empty password:
+     IllegalArgumentException thrown: Password is empty!
+3) Creation of a board with correct password parameter.
+
+4) Try to create category, passing wrong password:
+     AccessDeniedException thrown: Wrong password!
+5) Try to create category, with null name:
+     IllegalArgumentException thrown: Null category name not accepted!
+6) Try to create category, with empty name:
+     IllegalArgumentException thrown: Category name is empty!
+7) Creation of a category (Post).
+8) Try to create category, with the same name as previous:
+     ExistingCategoryException thrown: Existing category!
+9) Creation of a category (Video).
+10) Creation of a category (Image).
+11) Creation of a category (Gif).
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: --none--
+2)Video, friends: --none--
+3)Image, friends: --none--
+4)Gif, friends: --none--
+DATAS IN BOARD:
+--none--
+
+12) Try to remove an inexistent category:
+     NotExistingCategoryException thrown: Not existing category!
+13) Try to remove a null named category:
+     NotExistingCategoryException thrown: Not existing category!
+14) Removal of existing category, Video.
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: --none--
+2)Image, friends: --none--
+3)Gif, friends: --none--
+DATAS IN BOARD:
+--none--
+
+15) Try to add a friend to an inexistent category:
+     NotExistingCategoryException thrown: Not existing category!
+16) Try to add a friend with null name:
+     IllegalArgumentException thrown: Null friend name not accepted!
+17) Try to add a friend with empty name:
+     IllegalArgumentException thrown: Friend name is empty!
+18) Adding a new friend (Gabriele).
+19) Adding a new friend (Martina).
+20) Adding a new friend (Emanuele).
+21) Try to add a friend with the same name as previous:
+     IllegalArgumentException thrown: Friend name already exists!
+22) Try to remove an inexistent friend:
+     NotExistingFriendException thrown: Friend wanted to be removed doesn't exist!
+23) Try to remove a null named friend:
+     NotExistingFriendException thrown: Friend wanted to be removed doesn't exist!
+24) Removal of friend Emanuele from category Gif.
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: Gabriele 
+2)Image, friends: Martina 
+3)Gif, friends: --none--
+DATAS IN BOARD:
+--none--
+
+25) Adding a new data to the board (dato1).
+     Put method returned: true.
+26) Adding a new data to the board (dato2).
+     Put method returned: true.
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: Gabriele 
+2)Image, friends: Martina 
+3)Gif, friends: --none--
+DATAS IN BOARD:
+1) Data name: dato1, category: Post, likes number: 0.
+2) Data name: dato2, category: Post, likes number: 0.
+
+27) Try to add a null data:
+     IllegalArgumentException thrown: Null data not accepted!
+28) Try to add a data with the same name as previous:
+     ExistingDataException thrown: Data name already exists!
+29) Try to add a correctly named data with an inexistent category:
+     NotExistingCategoryException thrown: Not existing category!
+30) Adding a new data to the board (dato3).
+     Put method returned: true.
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: Gabriele 
+2)Image, friends: Martina 
+3)Gif, friends: --none--
+DATAS IN BOARD:
+1) Data name: dato1, category: Post, likes number: 0.
+2) Data name: dato2, category: Post, likes number: 0.
+3) Data name: dato3, category: Post, likes number: 0.
+
+31) Try to get a copy of an inexistent data:
+     NotExistingDataException thrown: Data doesn't exist!
+32) Try to get a copy of a null data:
+     NotExistingDataException thrown: Data doesn't exist!
+33) Get a copy of a data (Dato2).
+     Data name: dato2, category: Post, likes number: 0.
+
+Modifying copied data into:
+Data name: dato2, category: N_D, likes number: 1.
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: Gabriele 
+2)Image, friends: Martina 
+3)Gif, friends: --none--
+DATAS IN BOARD:
+1) Data name: dato1, category: Post, likes number: 0.
+2) Data name: dato2, category: Post, likes number: 0.
+3) Data name: dato3, category: Post, likes number: 0.
+
+Although copy is modified the data into the board remains unchanged.
+
+34) Try to remove a null data:
+     NotExistingDataException thrown: Data doesn't exist!
+35) Try to remove an inexistent data:
+     NotExistingDataException thrown: Data doesn't exist!
+36) Removal of a data (dato3).
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: Gabriele 
+2)Image, friends: Martina 
+3)Gif, friends: --none--
+DATAS IN BOARD:
+1) Data name: dato1, category: Post, likes number: 0.
+2) Data name: dato2, category: Post, likes number: 0.
+
+37) Try to get a list of datas with an inexistent category:
+     NotExistingCategoryException thrown: Not existing category! List would be empty!
+38) Getting a list of datas of passed category (Post):
+     Elements of the created list:  Data name: dato1, category: Post, likes number: 0. ;  Data name: dato2, category: Post, likes number: 0. ;  
+
+39) Try to add a like by an inexistent friend:
+     NotExistingFriendException thrown: Operation not permitted!
+40) Try to add a like to an inexistent data:
+     NotExistingDataException thrown: Data doesn't exist!
+41) Adding one like to a data (dato1).
+42) Adding two likes to a data (dato2).
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: Gabriele 
+2)Image, friends: Martina 
+3)Gif, friends: --none--
+DATAS IN BOARD:
+1) Data name: dato1, category: Post, likes number: 1.
+2) Data name: dato2, category: Post, likes number: 2.
+
+43) Getting an iterator which generates all datas in board sorted considering number of likes (descending order) and trying to remove an element.
+     UnsupportedOperationException thrown: Remove operation not permetted!
+Printing elements generated by iterator:
+     Data name: dato2, category: Post, likes number: 2.; Data name: dato1, category: Post, likes number: 1.; 
+
+44) Try to get an iterator which generates datas shared with an inexistent friend:
+     NotExistingFriendException thrown: No friend found!
+45) Getting an iterator which generates all datas in board shared with the passed friend username (Gabriele).
+Printing elements generated by iterator:
+     Data name: dato1, category: Post, likes number: 1.; Data name: dato2, category: Post, likes number: 2.; 
+
+46) Getting an iterator which generates all datas in board shared with the passed friend username (Martina).
+Printing elements generated by iterator:
+     
+47) Try to remove a category associated to datas (Post):
+     UnsupportedOperationException thrown: Category is associated to datas in board! Please remove datas before removing category.
+
+CURRENT STATUS OF BOARD'S CATEGORIES AND FRIENDS:
+1)Post, friends: Gabriele 
+2)Image, friends: Martina 
+3)Gif, friends: --none--
+DATAS IN BOARD:
+1) Data name: dato1, category: Post, likes number: 1.
+2) Data name: dato2, category: Post, likes number: 2.
+
+
+TESTING BACHECA2 METHODS:
+
+
+1) Try to create a board with null password:
+     IllegalArgumentException thrown: Null password not accepted!
+2) Try to create a board with empty password:
+     IllegalArgumentException thrown: Password is empty!
+3) Creation of a board with correct password parameter.
+
+4) Try to create category, passing wrong password:
+     AccessDeniedException thrown: Wrong password!
+5) Try to create category, with null name:
+     IllegalArgumentException thrown: Null category name not accepted!
+6) Try to create category, with empty name:
+     IllegalArgumentException thrown: Category name is empty!
+7) Creation of a category (Post).
+8) Try to create category, with the same name as previous:
+     ExistingCategoryException thrown: Existing category!
+9) Creation of a category (Video).
+10) Creation of a category (Image).
+11) Creation of a category (Gif).
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: 
+FRIENDS IN BOARD: {Gif=[], Post=[], Video=[], Image=[]}
+
+12) Try to remove an inexistent category:
+     NotExistingCategoryException thrown: Not existing category!
+13) Try to remove a null named category:
+     NotExistingCategoryException thrown: Not existing category!
+14) Removal of existing category, Video.
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: 
+FRIENDS IN BOARD: {Gif=[], Post=[], Image=[]}
+
+15) Try to add a friend to an inexistent category:
+     NotExistingCategoryException thrown: Not existing category!
+16) Try to add a friend with null name:
+     IllegalArgumentException thrown: Null friend name not accepted!
+17) Try to add a friend with empty name:
+     IllegalArgumentException thrown: Friend name is empty!
+18) Adding a new friend (Gabriele).
+19) Adding a new friend (Martina).
+20) Adding a new friend (Emanuele).
+21) Try to add a friend with the same name as previous:
+     IllegalArgumentException thrown: Friend name already exists!
+22) Try to remove an inexistent friend:
+     NotExistingFriendException thrown: Friend wanted to be removed doesn't exist!
+23) Try to remove a null named friend:
+     NotExistingFriendException thrown: Friend wanted to be removed doesn't exist!
+24) Removal of friend Emanuele from category Gif.
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: 
+FRIENDS IN BOARD: {Gif=[], Post=[Gabriele], Image=[Martina]}
+
+25) Adding a new data to the board (dato1).
+     Put method returned: true.
+26) Adding a new data to the board (dato2).
+     Put method returned: true.
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: Data name: dato1, category: Post, likes number: 0. Data name: dato2, category: Post, likes number: 0. 
+FRIENDS IN BOARD: {Gif=[], Post=[Gabriele], Image=[Martina]}
+
+27) Try to add a null data:
+     IllegalArgumentException thrown: Null data not accepted!
+28) Try to add a data with the same name as previous:
+     ExistingDataException thrown: Data name already exists!
+29) Try to add a correctly named data with an inexistent category:
+     NotExistingCategoryException thrown: Not existing category!
+30) Adding a new data to the board (dato3).
+     Put method returned: true.
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: Data name: dato1, category: Post, likes number: 0. Data name: dato2, category: Post, likes number: 0. Data name: dato3, category: Post, likes number: 0. 
+FRIENDS IN BOARD: {Gif=[], Post=[Gabriele], Image=[Martina]}
+
+31) Try to get a copy of an inexistent data:
+     NotExistingDataException thrown: Data doesn't exist!
+32) Try to get a copy of a null data:
+     NotExistingDataException thrown: Data doesn't exist!
+33) Get a copy of a data (Dato2).
+     Data name: dato2, category: Post, likes number: 0.
+
+Modifying copied data into:
+Data name: dato2, category: N_D, likes number: 1.
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: Data name: dato1, category: Post, likes number: 0. Data name: dato2, category: Post, likes number: 0. Data name: dato3, category: Post, likes number: 0. 
+FRIENDS IN BOARD: {Gif=[], Post=[Gabriele], Image=[Martina]}
+
+Although copy is modified the data into the board remains unchanged.
+
+34) Try to remove a null data:
+     NotExistingDataException thrown: Data doesn't exist!
+35) Try to remove an inexistent data:
+     NotExistingDataException thrown: Data doesn't exist!
+36) Removal of a data (dato3).
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: Data name: dato1, category: Post, likes number: 0. Data name: dato2, category: Post, likes number: 0. 
+FRIENDS IN BOARD: {Gif=[], Post=[Gabriele], Image=[Martina]}
+
+37) Try to get a list of datas with an inexistent category:
+     NotExistingCategoryException thrown: Not existing category! List would be empty!
+38) Getting a list of datas of passed category (Post):
+     Elements of the created list:  Data name: dato1, category: Post, likes number: 0. ;  Data name: dato2, category: Post, likes number: 0. ;  
+
+39) Try to add a like by an inexistent friend:
+     NotExistingFriendException thrown: Operation not permitted!
+40) Try to add a like to an inexistent data:
+     NotExistingDataException thrown: Data doesn't exist!
+41) Adding one like to a data (dato1).
+42) Adding two likes to a data (dato2).
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: Data name: dato1, category: Post, likes number: 1. Data name: dato2, category: Post, likes number: 2. 
+FRIENDS IN BOARD: {Gif=[], Post=[Gabriele], Image=[Martina]}
+
+43) Getting an iterator which generates all datas in board sorted considering number of likes (descending order) and trying to remove an element.
+     UnsupportedOperationException thrown: Remove operation not permetted!
+Printing elements generated by iterator:
+     Data name: dato2, category: Post, likes number: 2.; Data name: dato1, category: Post, likes number: 1.; 
+
+44) Try to get an iterator which generates datas shared with an inexistent friend:
+     NotExistingFriendException thrown: No friend found!
+45) Getting an iterator which generates all datas in board shared with the passed friend username (Gabriele).
+Printing elements generated by iterator:
+     Data name: dato1, category: Post, likes number: 1.; Data name: dato2, category: Post, likes number: 2.; 
+
+46) Getting an iterator which generates all datas in board shared with the passed friend username (Martina).
+Printing elements generated by iterator:
+     
+47) Try to remove a category associated to datas (Post):
+     UnsupportedOperationException thrown: Category is associated to datas in board! Please remove datas before removing category.
+
+CURRENT STATUS OF BOARD'S CATEGORIES, DATAS AND FRIENDS:
+DATAS IN BOARD: Data name: dato1, category: Post, likes number: 1. Data name: dato2, category: Post, likes number: 2. 
+FRIENDS IN BOARD: {Gif=[], Post=[Gabriele], Image=[Martina]}
+
